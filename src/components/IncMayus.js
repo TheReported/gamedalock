@@ -1,13 +1,21 @@
-import React from "react";
+import React, {useState} from "react";
 import Container from 'react-bootstrap/Container';
 import CheckMark from './Check';
-import CrossMark from './Cross';
 
 const IncMayus = () => {
+    const [mark, setMark] = useState(true)
+    const toggleMayus = () => {
+        setMark(() => {
+            let newState = mark
+            newState = !mark
+            return newState
+        })
+    }
+
     return (
         <Container className="part">
             <label>¿Desea incluir mayúsculas?</label>
-            <CheckMark />
+            <CheckMark is_marked={mark} click={toggleMayus}/>
         </Container>
         
     )

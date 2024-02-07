@@ -1,15 +1,20 @@
 import React, {useState} from "react";
 import Container from 'react-bootstrap/Container';
 import CheckMark from './Check';
-import CrossMark from './Cross';
 
 const IncSymbol = () => {
-    const [check, setCheck] = useState(true)
-
+    const [mark, setMark] = useState(true)
+    const toggleSymbols = () => {
+        setMark(() => {
+            let newState = mark
+            newState = !mark
+            return newState
+        })
+    }
     return (
         <Container className="part">
             <label>¿Desea incluir símbolos?</label>
-            <CheckMark is_symbol={check}/>
+            <CheckMark is_marked={mark} click={toggleSymbols}/>
         </Container>
         
     )

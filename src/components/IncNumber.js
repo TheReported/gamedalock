@@ -1,13 +1,20 @@
-import React from "react";
+import React, {useState} from "react";
 import Container from 'react-bootstrap/Container';
 import CheckMark from './Check';
-import CrossMark from './Cross';
 
 const IncNumber = () => {
+    const [mark, setMark] = useState(true)
+    const toggleNumber = () => {
+        setMark(() => {
+            let newState = mark
+            newState = !mark
+            return newState
+        })
+    }
     return (
         <Container className="part">
             <label>¿Desea incluir números?</label>
-            <CheckMark />
+            <CheckMark is_marked={mark} click={toggleNumber}/>
         </Container>
         
     )

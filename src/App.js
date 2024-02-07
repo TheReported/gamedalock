@@ -7,11 +7,14 @@ import IncMayus from './components/IncMayus';
 import IncNumber from './components/IncNumber';
 import GeneratePass from './components/GeneratePass';
 import { Container } from 'react-bootstrap';
+import generatePassword from './functions/generatePassword';
 
 function App() {
 
   const onSubmit = (event) => {
     event.preventDefault()
+    
+    generatePassword()
   }
 
   return (

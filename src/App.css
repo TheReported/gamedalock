@@ -88,3 +88,28 @@ input {
 	line-height: 40px;
 	background: #33257e;
 }
+
+.lock {
+	margin-left: 10px;
+}
+
+.showPass {
+	width: 100%;
+	background: none;
+	border-radius: 4px;
+	border: 1px solid rgba(255, 255, 255, .25);
+	color: #fff;
+	line-height: 40px;
+	height: 40px;
+	cursor:pointer;
+	transition: all .3s ease;
+}
+
+.showPass:hover {
+	border: 1px solid rgba(255, 255, 255, .50)
+}
+
+.showPass::selection{
+	background: #212139;
+}
+

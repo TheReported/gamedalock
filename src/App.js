@@ -1,17 +1,34 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './App.css';
 import Image from './components/Logo';
-import Part from './components/Part';
+import NumChar from './components/NumChar';
+import IncSymbol from './components/IncSymbol';
+import IncMayus from './components/IncMayus';
+import IncNumber from './components/IncNumber';
+import GeneratePass from './components/GeneratePass';
+import { Container } from 'react-bootstrap';
 
 function App() {
+
+  const onSubmit = (event) => {
+    event.preventDefault()
+  }
+
   return (
-    <div className='contenedor'>
+    
+    <Container className='contenedor'>
       <Image />
-      <form>
-        <Part />
+      <form onSubmit={onSubmit}>
+        <NumChar />
+        <IncSymbol />
+        <IncMayus />
+        <IncNumber />
+        <GeneratePass />
       </form>
-    </div>
+    </Container>
   )
 }
+
+
 
 export default App;

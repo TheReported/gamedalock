@@ -3,7 +3,7 @@ import Container from 'react-bootstrap/Container';
 import CheckMark from './Check';
 
 const IncMayus = () => {
-    const [mark, setMark] = useState(localStorage.getItem('mayus') === 'true')
+    const [mark, setMark] = useState(localStorage.getItem('mayus') === 'true' || 'true')
 
     const toggleMayus = () => {
         const newMark = !mark

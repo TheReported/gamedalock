@@ -3,7 +3,7 @@ import Container from 'react-bootstrap/Container';
 import CheckMark from './Check';
 
 const IncSymbol = () => {
-    const [mark, setMark] = useState(localStorage.getItem('symbols') === 'true')
+    const [mark, setMark] = useState(localStorage.getItem('symbols') === 'true' || 'true')
 
 
     const toggleSymbols = () => {

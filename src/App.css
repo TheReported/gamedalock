@@ -9,7 +9,7 @@
 }
 
 body {
-	background: #212139;
+	background: #022738;
 	color: #fff;
 }
 
@@ -55,7 +55,7 @@ input {
 
 .boton {
 	width: 100%;
-	background: #684bff;
+	background: #4b99ff;
 	color: #fff;
 	display: inline-flex;
 	align-items: center;
@@ -71,7 +71,7 @@ input {
 }
 
 .boton:hover {
-	background: #866FFD;
+	background: #6fa1fd;
 }
 
 .controls {
@@ -86,7 +86,7 @@ input {
 
 .controls span {
 	line-height: 40px;
-	background: #33257e;
+	background: #214170;
 }
 
 .lock {

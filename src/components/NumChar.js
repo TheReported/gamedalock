@@ -2,10 +2,10 @@ import React, {useState} from "react"
 import {Container} from 'react-bootstrap'
 // import {values} from './Utils'
 import { IncrementButton, ReductionButton } from "./Buttons"
-
+import App from "../App"
 
 const NumChar = () => {
-    const [char, setChar] = useState(parseInt(localStorage.getItem('numChars')))
+    const [char, setChar] = useState(parseInt(localStorage.getItem('numChars')) || 12)
 
     const incrementNumChars = () => {
         if (char < 20) {

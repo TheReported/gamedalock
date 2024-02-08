@@ -5,6 +5,7 @@ import {X} from 'react-bootstrap-icons';
 
 
 const CheckMark = ({is_marked, click}) => {
+
     if (is_marked) {
         return (
             <Button onClick={click} className="boton"><Check /></Button>

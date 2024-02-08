@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import './App.css';
 import Image from './components/Logo';
 import NumChar from './components/NumChar';
@@ -9,12 +9,34 @@ import GeneratePass from './components/GeneratePass';
 import { Container } from 'react-bootstrap';
 import generatePassword from './functions/generatePassword';
 
+const defaultConf = {
+  'numChars': 12,
+  'symbols': true,
+  'numbers': true,
+  'mayus': true,
+  'genPass': "",
+}
+
 function App() {
+  for (const [field, value] of Object.entries(defaultConf)){
+    localStorage.setItem(field, value)
+  }
+  const [password, setPassword] = useState(localStorage.getItem('genPass'))
+  useEffect(() => {
+    const newPassword = generatePassword(localStorage)
+
+    setPassword(newPassword)
+    localStorage.setItem("genPass", newPassword)
+
+}, [])
+
 
   const onSubmit = (event) => {
     event.preventDefault()
-    
-    generatePassword()
+    const newPassword = generatePassword(localStorage)
+
+    setPassword(newPassword)
+    localStorage.setItem("genPass", newPassword)
   }
 
   return (
@@ -26,7 +48,7 @@ function App() {
         <IncSymbol />
         <IncMayus />
         <IncNumber />
-        <GeneratePass />
+        <GeneratePass prop={password}/>
       </form>
     </Container>
   )

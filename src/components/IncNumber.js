@@ -3,14 +3,15 @@ import Container from 'react-bootstrap/Container';
 import CheckMark from './Check';
 
 const IncNumber = () => {
-    const [mark, setMark] = useState(true)
+    const [mark, setMark] = useState(localStorage.getItem('numbers') === 'true')
+
     const toggleNumber = () => {
-        setMark(() => {
-            let newState = mark
-            newState = !mark
-            return newState
-        })
+        const newMark = !mark
+        setMark(newMark)
+        localStorage.setItem('numbers', newMark)
+
     }
+
     return (
         <Container className="part">
             <label>¿Desea incluir números?</label>

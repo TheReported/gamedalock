@@ -1,7 +1,8 @@
-import React, {useEffect, useState} from "react";
+import React from "react";
 import {Button,Container} from 'react-bootstrap';
 import { LockFill } from "react-bootstrap-icons";
-import generatePassword from "../functions/generatePassword";
+
+// En este componente se mostrará la contraseña y se renovará al hacer click en el botón.
 
 const GeneratePass = ({prop}) => {
 

@@ -3,6 +3,7 @@ import Button from 'react-bootstrap/Button';
 import {Check} from 'react-bootstrap-icons';
 import {X} from 'react-bootstrap-icons';
 
+// Este componente contiene dos botones los cuales cambian su estado a partir de si está marcado.
 
 const CheckMark = ({is_marked, click}) => {
 

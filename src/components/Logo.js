@@ -1,7 +1,9 @@
 import React from "react";
 import Logo from '../img/logo.png';
 
-const Imagen = () => {
+// En este componente se añade el logo de la aplicación
+
+const Image = () => {
     return (
         <div className="logo">
             <img src={Logo} />
@@ -9,4 +11,4 @@ const Imagen = () => {
     )
 }
 
-export default Imagen;
+export default Image;

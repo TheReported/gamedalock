@@ -11,7 +11,12 @@ import generatePassword from './functions/generatePassword';
 
 
 function App() {
+
+  // Utilizamos el useState y el localStorage para tratar y almacenar la contraseña establecida.
+
   const [password, setPassword] = useState(localStorage.getItem('genPass'))
+
+  // Este método se acciona cuando se entra a la aplicación y se autogenera una contraseña en vez de verlo vacío.
   useEffect(() => {
     const newPassword = generatePassword(localStorage)
 
@@ -20,7 +25,7 @@ function App() {
 
 }, [])
 
-
+  // Este método se dispara cuando nosotros hacemos click en el botón de generar una nueva contraseña.
   const onSubmit = (event) => {
     event.preventDefault()
     const newPassword = generatePassword(localStorage)
